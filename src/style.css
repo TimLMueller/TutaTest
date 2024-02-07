@@ -1,0 +1,31 @@
+html {
+	background-color: black;
+	color: white;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+input[type='text'] {
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	border: 1px solid #2d9fd9;
+	color: #a0d18c;
+	width: 250px;
+	height: 30px;
+	padding-left: 10px;
+}
+
+input[type='text']:focus {
+	outline: none;
+	border: 1px solid #a0d18c;
+	color: #2d9fd9;
+}
+
+.center-screen {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 100vh;
+	flex-direction: column;
+}
