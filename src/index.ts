@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Gets the value from EventHandler
   function handleInput (): void {
     const inputUrl = urlInput?.value
-    if (inputUrl != null && isValidUrl(inputUrl)) {
+    if (inputUrl != null && typeof inputUrl === 'string' && isValidUrl(inputUrl)) {
       sendToServer(inputUrl)
         .then((response) => {
           if (resultDiv != null) {
@@ -56,10 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // body: JSON.stringify({ url })
     })
 
-    if (!response.ok) {
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    if (!(response.ok)) {
       throw new Error(`Server error! Status: ${response.status}`)
     }
 
-    return await response.json()
+    return response.json()
   }
 })
